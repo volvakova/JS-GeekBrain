@@ -1,0 +1,42 @@
+.white {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+}
+
+.black {
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    display: flex;
+}
+
+#board{
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;;
+}
+#numb{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 400px;
+    margin-top: -400px;
+    margin-left: -400px;
+}
+.letters{
+    text-align: center;
+    width: 50px;
+    height: 20px;
+}
+
+.numbers{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

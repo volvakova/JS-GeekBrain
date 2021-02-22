@@ -1,0 +1,13 @@
+#basket{
+    float: left;
+    width: 500px;
+    text-align: center;
+    background-color: burlywood;
+}
+
+#catalog{
+    float: left;
+    width: 500px;
+    text-align: center;
+    background-color: palegreen;
+}
