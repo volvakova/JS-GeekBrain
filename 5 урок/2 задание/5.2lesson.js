@@ -2,7 +2,8 @@ function Product(name, price){
     this.name = name;
     this.price = price;
 }
-let products = [new Product("Meat", 500) ,new Product("Milk", 100) ,new Product("Apple", 50), new Product("Calt", 50)];
+let productsCatalog = [];
+let productsBascet = [];
 
 function countBasketPrice(prod){
     let sum = 0;
@@ -17,16 +18,19 @@ const basket = document.querySelector('#basket');
 function GenerationCatalog(prod){
         for (let i= 0; i< prod.length; i++){
             const product = document.createElement('div');
+            const but = document.createElement('button');
+            but.classList.add('buttbuy')
             product.classList.add('product');
             product.innerHTML = `<p> Наименование: ${prod[i].name} </p> <p> Цена товара: ${prod[i].price} </p>`;
             catalog.appendChild(product);
+            catalog.appendChild(but);
             }
     }
 
-GenerationCatalog(products);
+
 
 function GenerationBasket(prod){
-    if(prod === null || prod === undefined || prod == NaN){
+    if(prod.length == 0){
         const message = document.createElement('p');
         message.innerHTML = `В корзине нет товаров`;
         basket.appendChild(message);
@@ -37,5 +41,17 @@ function GenerationBasket(prod){
         basket.appendChild(message);
     }
 }
+productsCatalog.push(new Product('молоко', 50));
+productsCatalog.push(new Product('сыр', 200));
+productsCatalog.push(new Product('колбаса', 350));
+productsCatalog.push(new Product('хлеб', 10));
 
-GenerationBasket(products);
+GenerationCatalog(productsCatalog);
+
+const bye = document.getElementsByClassName('buttbuy');
+
+for(let i=0; i<bye.length; i++){
+bye[i].addEventListener('click',function(e){
+    productsBascet.push(productsCatalog[i]);
+    GenerationBasket(productsBascet);
+})}
